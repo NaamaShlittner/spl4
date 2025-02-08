@@ -7,7 +7,9 @@ def main(args : list[str]):
     with open(inputfilename) as inputfile:
         for line in inputfile:
             splittedline : list[str] = line.strip().split(", ")
-            #TODO: apply the action (and insert to the table) if possible
+            act = Activitie(int(splittedline[0]), int(splittedline[1]), int(splittedline[2]), splittedline[3])
+            if repo.check_activity(act):
+                repo.add_activity(act)
 
 if __name__ == '__main__':
     main(sys.argv)

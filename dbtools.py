@@ -42,9 +42,12 @@ class Dao(object):
 
         self._conn.execute(stmt, params)
 
-    def find_all(self):
+    def find_all(self, sort_columns=None):
         c = self._conn.cursor()
-        c.execute('SELECT * FROM {}'.format(self._table_name))
+        if not sort_columns:
+            sort_columns = ['id']
+        order_by_clause = ", ".join(sort_columns)
+        c.execute(f'SELECT * FROM {self._table_name} ORDER BY {order_by_clause}')
         return orm(c, self._dto_type)
     
     def find(self, **keyvals):

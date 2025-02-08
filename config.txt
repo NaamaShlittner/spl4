@@ -8,8 +8,8 @@ B,7,San Antonio,35
 B,8,San Diego,65
 B,9,Dallas,75
 B,10,San Jose,80
-E,101,John Smith,50000,1
-E,102,Jane Doe,60000,1
+E,102,John Smith,50000,1
+E,101,Jane Doe,60000,1
 E,103,Bob Johnson,45000,2
 E,104,Alice Williams,55000,2
 E,105,Mike Brown,65000,3
